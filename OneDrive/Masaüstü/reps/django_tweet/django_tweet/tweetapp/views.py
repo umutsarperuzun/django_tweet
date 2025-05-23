@@ -8,4 +8,6 @@ def list_tweet(request):
     return render(request,"tweetapp/list_tweet.html",context=tweet_dict)
 
 def add_tweet(request):
+    if request.method == "POST":
+        print(request.POST["nickname"])
     return render(request,"tweetapp/add_tweet.html")
