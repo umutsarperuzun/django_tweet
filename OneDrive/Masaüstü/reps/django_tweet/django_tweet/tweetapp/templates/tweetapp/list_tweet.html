@@ -2,4 +2,9 @@
 
 {% block content%} 
 <h1>List Tweet Page</h1>
+<ul>
+    {% for tweet in list_tweet %}
+    <li>{{tweet}}</li>
+    {% endfor %}
+</ul>
 {% endblock %}
