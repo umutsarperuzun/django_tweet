@@ -58,7 +58,7 @@ def addtweetbymodelform(request):
 def tweet_delete(request,id):
     tweet=models.Tweet.objects.get(pk=id)
     if request.user == tweet.username:
-        tweet.delete #or models.Tweet.objects.filter(id=id).delete()
+        tweet.delete() #or models.Tweet.objects.filter(id=id).delete()
         return redirect("tweetapp:list_tweet")
     
 class SignUpView(CreateView):
