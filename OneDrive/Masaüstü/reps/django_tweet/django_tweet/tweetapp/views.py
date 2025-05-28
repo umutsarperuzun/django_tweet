@@ -54,7 +54,15 @@ def addtweetbymodelform(request):
         form=AddTweetModelForm()
         return render(request,'tweetapp/addtweetbymodelform.html',context={"form": form})   
     
+@login_required
+def tweet_delete(request,id):
+    tweet=models.Tweet.objects.get(pk=id)
+    if request.user == tweet.username:
+        tweet.delete #or models.Tweet.objects.filter(id=id).delete()
+        return redirect("tweetapp:list_tweet")
+    
 class SignUpView(CreateView):
     form_class=UserCreationForm
     success_url=reverse_lazy("login") #reverse lazy kullanmamizin sebebi bu view az kullanilacagi icin sistemi yormamak adina daha yavas olan reverse versiyonunu koyduk
     template_name="registration/signup.html"
+    
