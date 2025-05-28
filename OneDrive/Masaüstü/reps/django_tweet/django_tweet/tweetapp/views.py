@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from . import models
 from django .urls import reverse
 from tweetapp.forms import AddTweetForm,AddTweetModelForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def list_tweet(request):
@@ -9,6 +10,7 @@ def list_tweet(request):
     tweet_dict = {"Tweets": all_tweets}
     return render(request,"tweetapp/list_tweet.html",context=tweet_dict)
 
+@login_required(login_url="/login")
 def add_tweet(request):
     if request.method == "POST":
         nickname=request.POST["nickname"]
