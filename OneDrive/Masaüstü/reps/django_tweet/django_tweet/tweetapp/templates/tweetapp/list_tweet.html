@@ -1,18 +1,20 @@
 {% extends "base.html" %} {% block content%}
-<div class="container" style="width: 50%;">
+<div class="container" style="width: 50%">
   {% for tweet in Tweets %}
   <div class="card" style="padding: 10px">
-    <div class="card-header" style="background-color:cornflowerblue">
-        <h4>{{tweet.username}}</h4>
+    <div class="card-header" style="background-color: cornflowerblue">
+      <h4>{{tweet.username}}</h4>
     </div>
     <div class="card-body">
-        <p class="card-text">{{tweet.message}}</p>
-        <div class="time" style="font-size:10px ">
-            {{tweet.created_at}}
-        </div>
-        {% if tweet.username ==user%}
-        <a href="{% url 'tweetapp:deletetweet' id=tweet.id %}" class="btn btn-danger">Delete</a>
-        {%endif%}
+      <p class="card-text">{{tweet.message}}</p>
+      <div class="time" style="font-size: 10px">{{tweet.created_at}}</div>
+      {% if tweet.username == user %}
+      <a
+        href="{% url 'tweetapp:deletetweet' id=tweet.id %}"
+        class="btn btn-danger"
+        >Delete</a
+      >
+      {% endif %}
     </div>
   </div>
 
@@ -20,5 +22,3 @@
 </div>
 
 {% endblock %}
-
-
