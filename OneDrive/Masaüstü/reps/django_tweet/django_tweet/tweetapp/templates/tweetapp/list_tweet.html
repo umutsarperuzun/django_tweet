@@ -10,7 +10,7 @@
       <div class="time" style="font-size: 10px">{{tweet.created_at}}</div>
       {% if tweet.username == user %}
       <a
-        href="{% url 'tweetapp:deletetweet' id=tweet.id %}"
+        href="{% url 'tweetapp:tweet_delete' id=tweet.id %}"
         class="btn btn-danger"
         >Delete</a
       >
