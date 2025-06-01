@@ -9,7 +9,7 @@ TweetApp is a simple yet functional microblogging web application built with Dja
 - 📝 **Tweet Creation** – Add tweets via standard forms or Django ModelForms.
 - 👥 **User Authentication** – Sign up, log in, and log out using Django’s built-in auth system.
 - 🔒 **Access Control** – Only logged-in users can post tweets; users can only delete their own tweets.
-- 📋 **Tweet Listing** – View all tweets chronologically with creation timestamps.
+- 📋 **Tweet Listing** – View all tweets chronologically with creation timestamps
 - 🎨 **Basic Styling** – Bootstrap 5 integrated with custom CSS for styling forms.
 
 ---
